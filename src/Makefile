@@ -112,16 +112,16 @@ DefaultSecurityConfiguration.o: DefaultSecurityConfiguration.cpp \
 					DefaultSecurity.h
 
 config2cpp$(EXE_EXT):	config2cpp-main.o Config2Cpp.o $(LIB_CONFIG4CPP)
-		$(CXX) -o config2cpp$(EXE_EXT) config2cpp-main.o Config2Cpp.o \
+		$(CXX) -std=c++17 -o config2cpp$(EXE_EXT) config2cpp-main.o Config2Cpp.o \
 			$(LIB_CONFIG4CPP)
 		cp config2cpp$(EXE_EXT) $(BIN_DIR)
 
 config2cpp-nocheck$(EXE_EXT):	config2cpp-nocheck-main.o Config2Cpp.o
-		$(CXX) -o config2cpp-nocheck$(EXE_EXT) \
+		$(CXX) -std=c++17 -o config2cpp-nocheck$(EXE_EXT) \
 			config2cpp-nocheck-main.o Config2Cpp.o
 
 config4cpp$(EXE_EXT):	config4cpp.o $(LIB_CONFIG4CPP)
-		$(CXX) -o config4cpp$(EXE_EXT) config4cpp.o $(LIB_CONFIG4CPP)
+		$(CXX) -std=c++17 -o config4cpp$(EXE_EXT) config4cpp.o $(LIB_CONFIG4CPP)
 		cp config4cpp$(EXE_EXT) $(BIN_DIR)
 
 config4cpp.o:	config4cpp.cpp 	$(LIB_HDR_FILES)
